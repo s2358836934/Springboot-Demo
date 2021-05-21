@@ -18,4 +18,24 @@ public class PersonServiceImpl implements PersonService {
     public List<Person> showPerson() {
         return pd.showPerson();
     }
+
+    @Override
+    public void add(Person person) {
+        pd.add(person);
+    }
+
+    @Override
+    public void update(Person person) {
+        pd.update(person);
+    }
+
+    @Override
+    public Person getP(String name) {
+        return pd.getP(name);
+    }
+
+    @Override
+    public void delete(String name) {
+        pd.delete(name);
+    }
 }

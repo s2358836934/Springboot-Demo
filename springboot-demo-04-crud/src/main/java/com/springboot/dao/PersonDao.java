@@ -22,5 +22,34 @@ public class PersonDao {
         return personList;
     }
 
+    public void add(Person person){
+        personList.add(person);
+    }
+
+    public void update(Person person){
+        Person oldPerson = this.getP(person.getName());
+        if(oldPerson != null){
+             oldPerson.setName(person.getName());
+             oldPerson.setProfession(person.getProfession());
+        }
+
+    }
+
+    public Person getP(String name){
+        for(int i = 0; i < personList.size(); i++){
+            if(personList.get(i).getName().equals(name)){
+                return personList.get(i);
+            }
+        }
+        return null;
+    }
+
+    public void delete(String name){
+        for(int i = 0; i < personList.size(); i++){
+            if(personList.get(i).getName().equals(name)){
+                personList.remove(i);
+            }
+        }
+    }
 
 }
